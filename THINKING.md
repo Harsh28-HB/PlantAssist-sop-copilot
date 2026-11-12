@@ -115,6 +115,36 @@ I also understood that the AI copilot should support the supervisor rather than 
 
 Based on this feedback, I decided to prioritise revision-aware document retrieval, clear source references, and a fallback response when information is unavailable.
 
+### AI Critique: Conversation Excerpts
+
+**Prompt used:**
+
+Act as a skeptical product manager. Review my proposed user journey
+for a manufacturing SOP AI copilot. Identify usability issues,
+safety risks, document retrieval problems, and missing features.
+
+**Key points from the AI critique:**
+
+1. The copilot must distinguish between older and newer document revisions.
+2. Answers should include document names, revision numbers, and page references.
+3. The application should clearly identify questions that cannot be answered from the supplied PDFs.
+4. Safety-critical instructions should remind users to verify approved procedures.
+5. The interface should be easy to use during busy shop-floor shifts.
+
+**My reflection:**
+
+I agreed that revision handling and source references were important
+because supervisors need to verify the information before acting.
+
+I also agreed that the copilot should not invent answers when the
+documents do not contain sufficient information.
+
+Based on the critique, I improved the retrieval logic, added source
+references, introduced an unsupported-answer response, and included
+safety reminders.
+
+These are summaries of the critique, not verbatim conversation
+transcripts.
 
 
 ## 4. Improvement Added and Why I Chose It
