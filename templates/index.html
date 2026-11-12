@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10283f">
+    <title>PlantAssist | Manufacturing Intelligence</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <a href="#overview" class="brand">
+        <div class="brand-icon">P</div>
+        <div>
+            <h1>PlantAssist</h1>
+            <p>Manufacturing Intelligence Platform</p>
+        </div>
+    </a>
+
+    <nav class="top-nav">
+        <a href="#overview">Overview</a>
+        <a href="#quickQuestions">Knowledge Areas</a>
+        <a href="#answerSection">Responses</a>
+    </nav>
+
+    <div class="connection-status">
+        <span class="status-dot"></span>
+        <span>Assistant ready</span>
+    </div>
+</header>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <a href="#overview" class="side-link active">
+            <span>⌂</span> Overview
+        </a>
+
+        <a href="#askPanel" class="side-link">
+            <span>✳</span> Ask Copilot
+        </a>
+
+        <a href="#quickQuestions" class="side-link">
+            <span>▤</span> Quick questions
+        </a>
+
+        <a href="#answerSection" class="side-link">
+            <span>◫</span> Answers & Sources
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-label">KNOWLEDGE AREAS</div>
+
+        <a href="#quickQuestions" class="knowledge-link">
+            <span class="knowledge-dot quality"></span>
+            Quality inspection
+        </a>
+
+        <a href="#quickQuestions" class="knowledge-link">
+            <span class="knowledge-dot maintenance"></span>
+            Machine maintenance
+        </a>
+
+        <a href="#quickQuestions" class="knowledge-link">
+            <span class="knowledge-dot safety"></span>
+            Plant safety
+        </a>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-info">
+                <span class="info-icon">✓</span>
+                <div>
+                    <strong>Knowledge base loaded</strong>
+                    <p>4 supplied PDF documents</p>
+                </div>
+            </div>
+
+            <div class="sidebar-note">
+                <strong>Safety first</strong>
+                <p>Always verify safety-critical instructions against the latest approved plant procedures.</p>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main-content" id="overview">
+
+        <div class="breadcrumb">
+            Workspace <span>/</span> Manufacturing Copilot
+        </div>
+
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    SHOP FLOOR KNOWLEDGE ASSISTANT
+                </div>
+
+                <h2>Your plant knowledge.<br>
+                    <span>One question away.</span>
+                </h2>
+
+                <p>
+                    Get clear, document-backed answers about quality,
+                    machine maintenance and safety procedures.
+                    No more searching through lengthy manuals.
+                </p>
+
+                <div class="hero-tags">
+                    <span>✓ Document grounded</span>
+                    <span>✓ Source references</span>
+                    <span>✓ Revision aware</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+                <div class="visual-center">
+                    <span>✳</span>
+                </div>
+                <div class="visual-float float-top">
+                    <span class="float-dot"></span>
+                    Documents indexed
+                </div>
+                <div class="visual-float float-bottom">
+                    <span>⌕</span> Intelligent document search
+                </div>
+            </div>
+        </section>
+
+        <section class="overview-stats">
+            <article class="stat-card">
+                <div class="stat-icon teal-icon">▤</div>
+                <div>
+                    <span>Knowledge base</span>
+                    <strong>04 PDFs</strong>
+                    <small>Supplied documents</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue-icon">⌕</div>
+                <div>
+                    <span>Search index</span>
+                    <strong>17 chunks</strong>
+                    <small>Indexed passages</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green-icon">✓</div>
+                <div>
+                    <span>Answer engine</span>
+                    <strong>Gemini AI</strong>
+                    <small>Document-grounded</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="question-panel" id="askPanel">
+
+            <div class="panel-heading">
+                <div>
+                    <div class="panel-kicker">AI KNOWLEDGE SEARCH</div>
+                    <h3>What do you need to know?</h3>
+                    <p>Ask naturally. PlantAssist will search your documents.</p>
+                </div>
+
+                <div class="search-icon">⌕</div>
+            </div>
+
+            <form id="questionForm">
+
+                <label for="questionInput">Your question</label>
+
+                <div class="input-wrapper">
+                    <textarea
+                        id="questionInput"
+                        rows="3"
+                        maxlength="1000"
+                        placeholder="Example: What should I do if the TX-200 machine displays alarm AL-104?"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <span class="input-hint">
+                        <span>↵</span> Your answer will include supporting sources.
+                    </span>
+
+                    <button type="submit" id="askButton">
+                        <span id="buttonText">Ask PlantAssist</span>
+                        <span class="button-arrow">→</span>
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="quick-section" id="quickQuestions">
+
+            <div class="section-heading">
+                <div>
+                    <div class="panel-kicker">GET STARTED</div>
+                    <h3>Explore your knowledge base</h3>
+                    <p>Choose a common shop-floor question to get started.</p>
+                </div>
+            </div>
+
+            <div class="quick-grid">
+
+                <button class="quick-card" data-question="What is the recommended coolant concentration for the TX-200 CNC turning centre?">
+                    <div class="quick-icon quality-icon">◈</div>
+                    <div>
+                        <span class="quick-category">QUALITY & PROCESS</span>
+                        <strong>Coolant concentration</strong>
+                        <small>Check recommended operating levels</small>
+                    </div>
+                    <span class="quick-arrow">↗</span>
+                </button>
+
+                <button class="quick-card" data-question="The machine is showing alarm AL-104. What does it mean and what should the operator do?">
+                    <div class="quick-icon maintenance-icon">⚙</div>
+                    <div>
+                        <span class="quick-category">MAINTENANCE</span>
+                        <strong>Machine alarm AL-104</strong>
+                        <small>Understand alarm actions</small>
+                    </div>
+                    <span class="quick-arrow">↗</span>
+                </button>
+
+                <button class="quick-card" data-question="Who is allowed to remove a lockout lock from a machine?">
+                    <div class="quick-icon safety-icon">♧</div>
+                    <div>
+                        <span class="quick-category">PLANT SAFETY</span>
+                        <strong>Lockout / Tagout</strong>
+                        <small>Review lock removal rules</small>
+                    </div>
+                    <span class="quick-arrow">↗</span>
+                </button>
+
+                <button class="quick-card" data-question="What is the outer diameter tolerance for the BH-220 bearing housing?">
+                    <div class="quick-icon engineering-icon">⌖</div>
+                    <div>
+                        <span class="quick-category">DIMENSIONAL INSPECTION</span>
+                        <strong>BH-220 tolerance</strong>
+                        <small>Check engineering specifications</small>
+                    </div>
+                    <span class="quick-arrow">↗</span>
+                </button>
+
+            </div>
+        </section>
+
+        <section id="loading" class="loading hidden" aria-live="polite">
+            <div class="spinner"></div>
+            <div>
+                <strong>Searching plant knowledge...</strong>
+                <p>Finding relevant instructions and preparing an answer.</p>
+            </div>
+        </section>
+
+        <section id="errorBox" class="error-box hidden" role="alert"></section>
+
+        <section id="answerSection" class="answer-section hidden" aria-live="polite">
+
+            <div class="response-heading">
+                <div>
+                    <div class="panel-kicker">YOUR COPILOT RESPONSE</div>
+                    <h3>Here's what the documents say</h3>
+                </div>
+                <span id="answerMode" class="mode-tag">Document-based</span>
+            </div>
+
+            <div class="answer-card">
+                <div class="answer-topline">
+                    <span class="answer-indicator"></span>
+                    <strong>PLANTA SSIST RESPONSE</strong>
+                </div>
+                <div id="answerText"></div>
+            </div>
+
+            <div class="source-heading" id="sourcesPanel">
+                <div>
+                    <div class="panel-kicker">EVIDENCE & REFERENCES</div>
+                    <h3>Supporting documents</h3>
+                    <p>Verify the original document before taking action.</p>
+                </div>
+                <span id="sourceCount" class="source-count"></span>
+            </div>
+
+            <div id="sourcesList" class="sources-list"></div>
+
+        </section>
+
+        <section class="safety-banner">
+            <div class="safety-banner-icon">!</div>
+            <div>
+                <strong>Safety is always the priority</strong>
+                <p>
+                    PlantAssist is an information assistant. It does not
+                    replace approved procedures, formal training or
+                    authorization. Always verify safety-critical instructions
+                    against the latest controlled document in the plant QMS.
+                </p>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <span>PlantAssist</span>
+            <span>Manufacturing SOP AI Copilot</span>
+            <span>Internship assignment prototype</span>
+        </footer>
+
+    </main>
+</div>
+
+<script>
+const questionForm = document.getElementById("questionForm");
+const questionInput = document.getElementById("questionInput");
+const askButton = document.getElementById("askButton");
+const buttonText = document.getElementById("buttonText");
+
+const loading = document.getElementById("loading");
+const errorBox = document.getElementById("errorBox");
+const answerSection = document.getElementById("answerSection");
+const answerText = document.getElementById("answerText");
+const answerMode = document.getElementById("answerMode");
+
+const sourcesList = document.getElementById("sourcesList");
+const sourceCount = document.getElementById("sourceCount");
+
+
+function showError(message) {
+    errorBox.textContent = message;
+    errorBox.classList.remove("hidden");
+}
+
+function setLoading(isLoading) {
+    askButton.disabled = isLoading;
+    questionInput.disabled = isLoading;
+
+    loading.classList.toggle("hidden", !isLoading);
+    buttonText.textContent = isLoading
+        ? "Searching..."
+        : "Ask PlantAssist";
+}
+
+
+// Render simple Markdown safely without allowing raw HTML.
+function renderInlineMarkdown(parent, text) {
+    const pattern = /(\*\*[^*]+\*\*|\*[^*]+\*)/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = pattern.exec(text)) !== null) {
+        parent.appendChild(
+            document.createTextNode(text.slice(lastIndex, match.index))
+        );
+
+        const bold = match[0].startsWith("**");
+        const markerSize = bold ? 2 : 1;
+
+        const element = document.createElement(
+            bold ? "strong" : "em"
+        );
+
+        element.textContent = match[0].slice(markerSize, -markerSize);
+        parent.appendChild(element);
+
+        lastIndex = pattern.lastIndex;
+    }
+
+    parent.appendChild(
+        document.createTextNode(text.slice(lastIndex))
+    );
+}
+
+function renderAnswerMarkdown(text) {
+    answerText.replaceChildren();
+
+    const lines = String(text).split(/\r?\n/);
+    let list = null;
+    let listType = null;
+
+    for (const line of lines) {
+        const trimmed = line.trim();
+
+        if (!trimmed) {
+            list = null;
+            listType = null;
+            continue;
+        }
+
+        const bullet = trimmed.match(/^[-*]\s+(.+)$/);
+        const numbered = trimmed.match(/^\d+[.)]\s+(.+)$/);
+
+        if (bullet || numbered) {
+            const type = bullet ? "ul" : "ol";
+
+            if (listType !== type) {
+                list = document.createElement(type);
+                answerText.appendChild(list);
+                listType = type;
+            }
+
+            const item = document.createElement("li");
+
+            renderInlineMarkdown(
+                item,
+                (bullet || numbered)[1]
+            );
+
+            list.appendChild(item);
+        } else {
+            list = null;
+            listType = null;
+
+            const paragraph = document.createElement("p");
+            renderInlineMarkdown(paragraph, trimmed);
+            answerText.appendChild(paragraph);
+        }
+    }
+}
+
+
+function createSourceCard(source) {
+    const card = document.createElement("article");
+    card.className = "source-card";
+
+    const header = document.createElement("div");
+    header.className = "source-card-header";
+
+    const title = document.createElement("h4");
+    title.textContent = source.document_number || "Source document";
+
+    const pageBadge = document.createElement("span");
+    pageBadge.className = "source-page";
+    pageBadge.textContent = `Page ${source.page}`;
+
+    header.append(title, pageBadge);
+
+    const filename = document.createElement("p");
+    filename.className = "source-filename";
+    filename.textContent = source.document;
+
+    const metadata = document.createElement("div");
+    metadata.className = "source-meta";
+
+    const revision = document.createElement("span");
+    revision.textContent = source.revision !== null
+        ? `Revision ${source.revision}`
+        : "Revision unknown";
+
+    const status = document.createElement("span");
+    status.textContent = (source.revision_status || "")
+        .replaceAll("_", " ");
+
+    const score = document.createElement("span");
+    score.textContent = `Match ${Math.round((source.relevance || 0) * 100)}%`;
+
+    metadata.append(revision, status, score);
+
+    const details = document.createElement("details");
+    details.className = "source-details";
+
+    const summary = document.createElement("summary");
+    summary.textContent = "View supporting passage";
+
+    const excerpt = document.createElement("p");
+    excerpt.className = "source-excerpt";
+    excerpt.textContent = source.excerpt || "";
+
+    details.append(summary, excerpt);
+
+    card.append(header, filename, metadata, details);
+
+    return card;
+}
+
+
+questionForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const question = questionInput.value.trim();
+
+    if (!question) {
+        showError("Please enter a question first.");
+        return;
+    }
+
+    errorBox.classList.add("hidden");
+    answerSection.classList.add("hidden");
+    sourcesList.replaceChildren();
+
+    setLoading(true);
+
+    try {
+        const response = await fetch("/api/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ question })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                data.detail || "Unable to process your question."
+            );
+        }
+
+        renderAnswerMarkdown(
+            data.answer || "No answer was returned."
+        );
+
+        answerMode.textContent = data.ai_enabled
+            ? "Gemini · Document grounded"
+            : "Retrieval only";
+
+        const sources = data.sources || [];
+
+        sourceCount.textContent = `${sources.length} source${sources.length === 1 ? "" : "s"}`;
+
+        if (sources.length === 0) {
+            const empty = document.createElement("p");
+            empty.className = "no-sources";
+            empty.textContent =
+                "No sufficiently relevant supporting passages were found.";
+            sourcesList.appendChild(empty);
+        } else {
+            sources.forEach(source => {
+                sourcesList.appendChild(createSourceCard(source));
+            });
+        }
+
+        answerSection.classList.remove("hidden");
+
+        answerSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    } catch (error) {
+        showError(
+            error.message || "Something went wrong. Please try again."
+        );
+    } finally {
+        setLoading(false);
+    }
+});
+
+
+document.querySelectorAll(".quick-card").forEach(button => {
+    button.addEventListener("click", () => {
+        questionInput.value = button.dataset.question;
+        questionInput.focus();
+
+        document.getElementById("askPanel").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
+});
+</script>
+
+</body>
+</html>
